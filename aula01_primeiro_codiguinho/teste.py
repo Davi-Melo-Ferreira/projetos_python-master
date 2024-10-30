@@ -5,7 +5,7 @@ import os
 os.system('cls')
 
 # Printar Hello World
-print(('¯' + '–') * 10)
+print('—' * 10)
 print('Hello World')
 print('—' * 10)
 print()
