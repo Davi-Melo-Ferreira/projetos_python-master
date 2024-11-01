@@ -1,17 +1,15 @@
-import os
+import os 
 
 
 os.system('cls')
 
-custo = int(input('Qual o Custo da Compra?: '))
-client_age = int(input('Qual a Idade do Cliente?: '))
+dias = int(input('Quando o livro foi devolvido após a data de validade?: '))
 
-if client_age > 60:
-    desconto = custo * 0.15
-elif client_age <= 60 and client_age >= 18 and custo > 200:
-    desconto = custo * 0.10
+if dias > 7:
+    multa = (dias * 2)
+elif dias >= 4:
+    multa = (dias * 1)
 else:
-    desconto = custo * 0.05
-valor_final = custo - desconto 
+    multa = (dias * 0.50)
 
-print(f'O valor com o desconto de {desconto} é: {valor_final}')
+print(f'Você deve R${multa} reais de multa')
