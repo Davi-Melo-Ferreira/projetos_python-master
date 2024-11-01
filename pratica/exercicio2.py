@@ -1,3 +1,4 @@
+
 import os
 
 
@@ -20,6 +21,8 @@ elif qua > qui and qua > sex:
     print('Quarta é o maior')
 elif qui > sex:
     print('Quinta é o maior')
+elif media == seg:
+    print('Todos são iguais')
 else:
     print('Sexta é o maior')
 

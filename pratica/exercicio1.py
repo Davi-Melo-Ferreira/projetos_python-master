@@ -1,3 +1,4 @@
+
 import os 
 
 
@@ -12,4 +13,4 @@ elif dias >= 4:
 else:
     multa = (dias * 0.50)
 
-print(f'Você deve R${multa} reais de multa')
+print(f'Você deve R${multa:.2f} reais de multa')
