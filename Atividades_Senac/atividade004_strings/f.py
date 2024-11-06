@@ -4,4 +4,9 @@ import os
 
 os.system('cls')
 
-nome = 'davi de melo ferreira'        #input('Diga seu nome completo: ')
+nome = input('Diga seu nome completo: ')
+
+separado = nome.split()
+
+print(f' {separado[0]}\n {separado[1]}\n \
+{separado[2]}\n {separado[3]}\n')
