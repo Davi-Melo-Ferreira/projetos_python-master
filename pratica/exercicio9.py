@@ -9,12 +9,12 @@ os.system('cls')
 
 frase = input('Diga uma citação famosa: ')
 
-fraseM = frase.upper()
-frasem = frase.lower()
-contar = len(frase)
+fraseM = frase.upper() # tudo em maiúsculo
+frasem = frase.lower() # tudo em minúsculo
+contar = len(frase) # conta quantos índices tem na frase
 
-lista = frase.split()
-contar2 = len(lista)
+lista = frase.split() # transforma as palavras em lista
+contar2 = len(lista) # conta os índices na lista
 
 print(fraseM)
 print(frasem)

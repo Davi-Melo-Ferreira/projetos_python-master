@@ -4,7 +4,8 @@ import os
 os.system('cls')
 
 frase = input('Quer namorar comigo?: ')
+frasem = frase.lower()
 
-resposta = 'a' in frase
+resposta = 'sim' in frasem
 
 print(resposta)

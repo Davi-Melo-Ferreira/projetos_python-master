@@ -10,8 +10,9 @@ nomem = nome.lower()
 nomeM = nome.capitalize()
 lista = nomeM.split()
 
-if genero == 'feminino':
+if 'feminino' in generom:
     print(f'Dra. {lista[1].capitalize()}')
 else:
-    if genero == 'masculino':
+    if genero in 'masculino':
         print(f'Dr. {lista[1].capitalize()}')
+print('.'*70)
