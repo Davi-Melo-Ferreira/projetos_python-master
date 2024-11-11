@@ -1,9 +1,8 @@
 import os
 import random
 
-os.system('cls')
 
-import random
+os.system('cls')
 
 # Pac-man pega ou não o power-up
 power = input('Pac-man deve pegar o power-up?: ')

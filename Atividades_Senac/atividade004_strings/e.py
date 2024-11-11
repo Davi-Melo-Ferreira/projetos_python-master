@@ -5,12 +5,18 @@ import os
 os.system('cls')
 
 frase = input('Diga uma frase: ')
-a = frase.count('a')
-e = frase.count('e')
-i = frase.count('i')
-o = frase.count('o')
-u = frase.count('u')
+frasem = frase.lower()
+a = frasem.count('a')
+e = frasem.count('e')
+i = frasem.count('i')
+o = frasem.count('o')
+u = frasem.count('u')
 
 soma = a + e + i + o + u
-
+print(f'A vogal A aparece: {a} vezes')
+print(f'A vogal E aparece: {e} vezes')
+print(f'A vogal I aparece: {i} vezes')
+print(f'A vogal O aparece: {o} vezes')
+print(f'A vogal U aparece: {u} vezes')
+print('.'*70)
 print(f'As vogais foram usadas {soma} vezes')

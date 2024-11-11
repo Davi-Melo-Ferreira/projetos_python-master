@@ -10,9 +10,13 @@ print('.'*70)
 
 minusculas = frase1.lower() # frase em minúsculo
 print(f'Frase original: {frase1}')
-print(f'Frase mpva: {minusculas}')
+print(f'Frase nova: {minusculas}')
 print('.'*70)
 
+maiusculas = frase1.upper() # frase em minúsculo
+print(f'Frase original: {frase1}')
+print(f'Frase nova: {maiusculas}')
+print('.'*70)
 
 capitalizada = frase1.capitalize() # frase capitalizada
 print(f'Frase original: {frase1}')

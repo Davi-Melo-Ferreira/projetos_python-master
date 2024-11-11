@@ -8,5 +8,6 @@ nome = input('Diga seu nome completo: ')
 
 separado = nome.split()
 
+#print(separado)
 print(f' {separado[0]}\n {separado[1]}\n \
 {separado[2]}\n {separado[3]}\n')
