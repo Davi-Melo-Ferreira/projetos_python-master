@@ -4,8 +4,8 @@ import os
 os.system('cls')
 
 print('-'*70)
-print('Operadores úteis para')
-print('Strings e Estruturas de Dados')
+print('Operadores úteis para \
+Strings e Estruturas de Dados')
 print('-'*70)
 
 texto = 'Olá, Mundo!'
