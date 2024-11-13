@@ -4,10 +4,8 @@ import os
 
 os.system('cls')
 
-for c in range(1, 500):
-    if c % 2 != 0 and c - 3 % 2 == 0:
-        c += c
-        print(c)
-    else:
-       continue
+for c in range(1, 50):
+    if c % 2 == 0:
+        soma = c + c
+        print(soma)
 print('FIM')
