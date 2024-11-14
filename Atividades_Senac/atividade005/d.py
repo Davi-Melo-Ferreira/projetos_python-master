@@ -5,4 +5,6 @@ import os
 os.system('cls')
 
 for c in range(0, 100, 2):
-    print(c)
+    if c % 10 == 0:
+        print(c, '\n')
+    print(c, end="|")

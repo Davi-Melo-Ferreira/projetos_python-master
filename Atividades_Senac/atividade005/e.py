@@ -4,11 +4,8 @@ import os
 
 os.system('cls')
 
-cont_par = 0
-soma_par = 0
+qntd_par = 0
 
 for c in range(0, 100, 2):
-    cont_par += 1
-    soma_par += c
-print(f'Contador de par: {cont_par}')
-print(f'Soma de par: {soma_par}')
+    qntd_par += 1
+print(f'Quantidade de pares encontrados: {qntd_par}')

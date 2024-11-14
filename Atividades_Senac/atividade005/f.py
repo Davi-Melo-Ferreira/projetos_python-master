@@ -4,10 +4,10 @@ import os
 
 os.system('cls')
 
-for principal in range(2, 101):
+for loop in range(2, 101):
     divisores = 0
-    for var_a in range(1, principal + 1):
-        if principal % var_a == 0:
+    for loop2 in range(1, loop + 1):
+        if loop % loop2 == 0:
             divisores += 1
     if (divisores == 2):
-        print(principal, end='|')
+        print(loop, end='|')
