@@ -4,7 +4,5 @@ import os
 
 os.system('cls')
 
-for c in range(1, 100 + 1):
-    if c % 2 == 0:
-        print(c)
-print('FIM')
+for c in range(0, 100, 2):
+    print(c)
