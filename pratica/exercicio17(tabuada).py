@@ -9,4 +9,5 @@ for i in range(1, 11):
         if 1 == j:
             print('\n')
         print(f'{i} x {j} = {mult}', end=' | ')
+    print()
 print('\n')
