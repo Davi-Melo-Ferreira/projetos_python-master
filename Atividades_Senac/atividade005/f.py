@@ -9,5 +9,5 @@ for loop in range(2, 101):
     for loop2 in range(1, loop + 1):
         if loop % loop2 == 0:
             divisores += 1
-    if (divisores == 2):
+    if divisores == 2:
         print(loop, end='|')

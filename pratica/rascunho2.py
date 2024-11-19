@@ -11,15 +11,15 @@ os.system('cls')
 #     soma += 1
 # print(soma)
 
-# for i in range(2, 100 + 1):
+# soma = 0
+# for i in range(2, 101):
 #     divisores = 0
-#     soma = 0
-#     for j in range(1, 100 + 1):
+#     soma += i
+#     for j in range(1, 101):
 #         if i % j == 0:
 #             divisores += 1
 #     if (divisores == 2):
 #         print(i, end='|')
-#     soma += j
 # print(soma)
 
 # for i in range(1, 11):
