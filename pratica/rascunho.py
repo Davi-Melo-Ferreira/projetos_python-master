@@ -3,9 +3,14 @@ import os
 
 os.system('cls')
 
-frase = input('frase: ')
+# fim = int(input('Digite um número para o fim do intervalo: '))
 
-abc = 'a'
-num = '1'
-trocar = frase.replace(abc[0], num[0])
-print(trocar)
+for i in range(1, 7):
+#    a + b = x
+#    b + x = y
+#    x + y = z
+#    y + z = a
+    
+    
+    
+    
