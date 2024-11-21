@@ -3,10 +3,13 @@ import os
 
 os.system('cls')
 
-for i in range(1,101):
-    divisores = 0
-    for j in range(1, i):
-        if i % j == 0:
-            divisores += j
-    if divisores == i:
-        print(divisores, end='|')
+# nome = str(input('Nome: '))
+# peso = float(input('peso: '))
+# altura = float(input('altura: '))
+# cadastro = [nome, peso, altura]
+# print()
+
+listas_das_listas = [[1, 2, 3,[10, 11, 12, [13, 14, 15]]], [4, 5, 6] ]
+print(listas_das_listas[0][3][3][0])
+
+
