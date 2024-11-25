@@ -52,5 +52,5 @@ for i in lista[4:6]:
     for j in lista[10:12]:
         mult *= j
          
-print(f'O produto dos intervalos 5-6 por 11-12 é: {mult}')
+print(mult)
 print()

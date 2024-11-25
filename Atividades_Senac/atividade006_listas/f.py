@@ -3,7 +3,22 @@ import os
 
 
 os.system('cls')
-lista = ['Davi', 'Thiago', 'Kayky', 'Francisco', 'Nicolas']
-# 4, 6, 5, 9, 7
+
+lista = []
+cont = 0
+while True:
+    cont += 1
+    resp = input(f'Digite o {cont}º nome: ')
+    lista.append(resp)
+    if cont > 5:
+        break
+
+
 for i in range(0, 5):
-    print(f'Nome: {lista[i]} | índice: {len(lista[i])}\n')
+    print(f'Nome: {lista[i]} | Quantidade de índices: {len(lista[i])}\n')
+
+nome = input('Qual nome você quer?: ').lower()
+
+for ind in range(len(lista)):
+    if nome in lista[ind]:
+        print(f'O nome {nome} está no índice {ind}')

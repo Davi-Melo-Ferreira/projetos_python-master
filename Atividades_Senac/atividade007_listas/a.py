@@ -13,12 +13,18 @@ os.system('cls')
 # imprimir números aleatórios em uma lista
 lista = []
 while True:
-    resp = input('Digite um número ou digite: (s-0) para sair: ')
+    resp = input('Digite um número ou digite: (s-0) para sair: ').lower().replace(' ','')
     if resp == 's' or resp == '0':
+        print('Saindo...')
         break
+    elif not resp.isnumeric():
+        print('Número inválido')
     else:
         num = int(resp)
         lista.append(num)
+if lista == []:
+    print('Lista vazia!')
+    exit()
 
 print('Os números impressos foram:')
 print(lista)
@@ -31,14 +37,12 @@ print('-'*70)
 
 # todas as notas na ordem inversa à que foram informadas, uma abaixo da outra
 print('as notas na ordem inversa à que foram informadas, uma abaixo da outra:')
-ind = len(lista)
-for i in lista:
-    ind -= 1
-    print(lista[ind])
+for i in lista[::-1]:
+    print(i)
 print('-'*70)
 
 # Calcule e mostre a soma das notas
-soma = int(0)
+soma = 0
 for nota in lista:
     soma += nota
 print('a soma das notas:')
