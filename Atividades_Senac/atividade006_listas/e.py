@@ -10,4 +10,4 @@ lista = []
 for letra in frase:
     if letra in vogais:
         lista.append(letra)
-print(lista)
+print(lista[::-1])

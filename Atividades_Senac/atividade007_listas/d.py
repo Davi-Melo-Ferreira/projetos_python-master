@@ -3,12 +3,10 @@ import os
 
 
 os.system('cls')
-num = int
-lista_n = []
-while len(lista_n) < 6:
-    for i in range(1, 6):
-        print(len(lista_n))
-        entrada = input('Digite um nome: ').lower()
-        lista_n.append(entrada)       
-    break
-print(lista_n)
+
+lista_n = ['Davi', 'Pedro', 'Guilherme', 'Ronald','Kayky', 'Renato']
+
+if 'pedro' in lista_n:
+    print('Pedro está na lista!')
+else:
+    print('Pedro não está na lista!')

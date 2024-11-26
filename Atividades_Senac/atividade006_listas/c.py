@@ -48,9 +48,9 @@ print('O produto dos intervalos 5-6 por 11-12:')
 print()
 mult = 1
 for i in lista[4:6]:
-    mult *= i
     for j in lista[10:12]:
-        mult *= j
-         
-print(mult)
+        mult = i * j
+        print(f'{i}x{j} = {mult}', end='|')
+    if i > 2:
+        print('\n')
 print()
