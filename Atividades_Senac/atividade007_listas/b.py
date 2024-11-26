@@ -10,6 +10,6 @@ for j in range(6):
 
         lista.append(random.randint(1, 100))
         qntd = len(lista)
-        if qntd > 9:
+        if qntd > 49:
             break
     print(lista)
