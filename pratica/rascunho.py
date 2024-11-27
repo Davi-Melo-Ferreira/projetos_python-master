@@ -3,9 +3,12 @@ import os
 
 os.system('cls')
 
-# Organizar nomes em ordem alfabetica
+# imprimir uma palavra em seus respectivos números no alfabeto
+# alph = ' abcdefghijklmnopqrstuvwxyz'
 
-alph = 'abcefghijklmnopqrstuvwxyz'
+# entrada = input('Digite uma palavra: ').lower()
 
-entrada = input('Digite uma palavra: ').lower()
-print(len(alph[1]))
+# for char in entrada:
+#     verificar = alph.index(char)
+#     print(verificar, end=' ')
+

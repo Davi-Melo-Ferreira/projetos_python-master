@@ -12,11 +12,11 @@ for i in range(1, 11):
     lista.append(random.randint(1, 100))
 print(lista)
 
-lista.sort()
-lista_a.append(lista)
+lista_a = lista.copy()
+lista_d = lista.copy()
 
-lista.sort(reverse=True)
-lista_d.append(lista)
+lista_a.sort()
+lista_d.sort(reverse=True)
 
-print(f'Lista ascendente: {lista}')
-print(f'Lista descendente: {lista}')
+print(f'Lista ascendente: {lista_a}')
+print(f'Lista descendente: {lista_d}')
