@@ -12,3 +12,12 @@ os.system('cls')
 # #     verificar = alph.index(char)
 # #     print(verificar, end=' ')
 
+lista1 = ['a']
+lista2 = ['b']
+lista3 = ['c']
+lista = []
+i = -1
+while True:
+    i += 1
+    lista.append(lista3[i])
+    print(lista)
