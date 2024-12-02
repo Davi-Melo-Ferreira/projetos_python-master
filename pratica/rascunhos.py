@@ -2,17 +2,18 @@ import os
 
 os.system('cls')
 
-titulos = set(['gta', 'gta5', 'hollow kight', 'silksong'])
+titulos = {'gta', 'gta5', 'hollow knight', 'silksong'}
 
-rockstar_games = set(['gta','gta5'])
-teamcherry = set(['hollow knight', 'silksong'])
+rockstar_games = {'gta','gta5'}
+teamcherry = {'hollow knight', 'silksong'}
 tema = [rockstar_games, teamcherry]
-favorito = 'hollow knight'
+favorito = {'hollow knight'}
 
-cat = [rockstar_games, teamcherry, tema]
+empresas = [teamcherry, rockstar_games]
 
-for categoria1 in cat:
-    for categoria in categoria1:
-        if favorito in categoria:
-            print('yes')
-            break
+conjunto = [empresas, tema]
+
+for ind in :
+    if favorito in ind:
+        print(ind)
+        break
