@@ -1,6 +1,6 @@
 import os
-
 import random
+
 
 os.system('cls')
 
@@ -37,7 +37,6 @@ red_dead = set(["Red Dead Redemption", "Red Dead Redemption 2"])
 legend_of_zelda = set(["Ocarina of Time", "Breath of the Wild", "Tears of the Kingdom"])
 baldurs_gate = set(["Baldur's Gate", "Baldur's Gate 2", "Baldur's Gate 3"])
 
-
 # Conjunto
 temas = [anime, terror, ficcao_cientifica, fantasia]
 generos = [acao, rpg, estrategia, aventura]
@@ -66,26 +65,26 @@ while True:
         nota = int(input('Nota(1-5): '))
         if nota == 1:
             one.add(titulo_alt)
-            titulos.remove(titulo_alt)
+            titulos.discard(titulo_alt)
         elif nota == 2:
             two.add(titulo_alt)
-            titulos.remove(titulo_alt)
+            titulos.discard(titulo_alt)
         elif nota == 3:
             thr.add(titulo_alt)
-            titulos.remove(titulo_alt)
+            titulos.discard(titulo_alt)
         elif nota == 4:
             fou.add(titulo_alt)
-            titulos.remove(titulo_alt)
+            titulos.discard(titulo_alt)
         elif nota == 5:
             fiv.add(titulo_alt)
-            titulos.remove(titulo_alt)
+            titulos.discard(titulo_alt)
         print()
     elif escolha == '2':
         print()
         remover = input('Qual Jogo você quer remover de Notas?: ')
         for cat in notas:
             if remover in cat:
-                jogo_removido = cat.remove(remover)
+                jogo_removido = cat.discard(remover)
         if remover not in cat:
             print('Jogo foi Removido ou Não Encontrado!\n')
     elif escolha == 's':
@@ -107,12 +106,13 @@ print()
 recomendar = set([])
 
 for ind_5 in fiv:
-    print(f"Recomendações baseadas nos seus jogos favoritos: {ind_5}")
     for ind in conjunto_total:
         for categoria in ind:
             for tit in categoria:
                 if ind_5 in categoria:
                     jogos_recomendados.add(tit)
                 elif ind_5 in jogos_recomendados:
-                    jogos_recomendados.remove(ind_5)
+                    jogos_recomendados.discard(ind_5)
+
+print(f"Recomendações baseadas nos seus jogos favoritos: {fiv}")
 print(jogos_recomendados)
