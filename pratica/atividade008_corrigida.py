@@ -51,12 +51,15 @@ two = set([])
 thr = set([])
 fou = set([])
 fiv = set([])
+notas = [one, two, thr, fou, fiv]
+jogos_recomendados = set([])
 
 while True:
     print('Avaliar jogo(1)\n'
+        'Remover um Jogo(2)\n'
         'Sair(s)'
     )
-    escolha = input('O que você quer fazer? (1-s): ').lower()
+    escolha = input('O que você quer fazer?: ').lower()
     if escolha == '1':
         titulo_alt = random.choice(list(titulos))
         print('\nJogo:', titulo_alt)
@@ -77,8 +80,18 @@ while True:
             fiv.add(titulo_alt)
             titulos.remove(titulo_alt)
         print()
+    elif escolha == '2':
+        print()
+        remover = input('Qual Jogo você quer remover de Notas?: ')
+        for cat in notas:
+            if remover in cat:
+                jogo_removido = cat.remove(remover)
+        if remover not in cat:
+            print('Jogo foi Removido ou Não Encontrado!\n')
     elif escolha == 's':
         break
+    else:
+        print('Inválido!\n')
 
 print(f'Seus jogos Favoritos Baseado em sua Avaliação\n'
       f'Nota 1: {list(one)}\n'
@@ -91,9 +104,15 @@ print(f'Seus jogos Favoritos Baseado em sua Avaliação\n'
 print('-'*70)
 print()
 
+recomendar = set([])
+
 for ind_5 in fiv:
-    print(f"Recomendações baseadas no seu jogo favorito: {ind_5}")
+    print(f"Recomendações baseadas nos seus jogos favoritos: {ind_5}")
     for ind in conjunto_total:
         for categoria in ind:
-            if ind_5 in categoria:
-                print(f"- Categoria relacionada: {categoria}")
+            for tit in categoria:
+                if ind_5 in categoria:
+                    jogos_recomendados.add(tit)
+                elif ind_5 in jogos_recomendados:
+                    jogos_recomendados.remove(ind_5)
+print(jogos_recomendados)
