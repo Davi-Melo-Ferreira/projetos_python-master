@@ -45,7 +45,7 @@ devs = [rockstar_games, nintendo, capcom]
 series = [red_dead, legend_of_zelda, baldurs_gate]
 conjunto_total = [temas, generos, devs, series]
 
-# Listas para Notas
+# Notas de 1 a 5
 one = set([])
 two = set([])
 thr = set([])
