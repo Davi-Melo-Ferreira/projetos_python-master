@@ -6,7 +6,6 @@ os.system('cls')
 
 # Recomendador de Jogos
 # Títulos - Todos os jogos
-# Títulos - Todos os jogos
 titulos = set([
     "Red Dead Redemption 2", "The Legend of Zelda: Breath of the Wild", "Hollow Knight", 
     "Dark Souls III", "Baldur's Gate 3", "Resident Evil 4", "Elden Ring", "Cyberpunk 2077", 
@@ -116,3 +115,4 @@ for ind_5 in fiv:
 
 print(f"Recomendações baseadas nos seus jogos favoritos: {fiv}")
 print(jogos_recomendados)
+print()
