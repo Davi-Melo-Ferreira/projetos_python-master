@@ -29,6 +29,10 @@ cores['red'] = 'Vermelho'
 cores['green'] =  'Verde'
 cores['blue'] = 'Azul'
 
+elementos['Pb'] = 'Chumbo'
+elementos['Au'] = 'Verde'
+elementos['N'] = 'Azul'
+
 numeros[1] = 100
 numeros[2] = 200
 numeros[3] = 300
