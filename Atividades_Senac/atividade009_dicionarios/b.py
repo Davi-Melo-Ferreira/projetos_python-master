@@ -29,24 +29,25 @@ while True:
             input('A cor citada foi escrito errado ou não existe, Pressione ENTER')
 
     elif opcao == '3':
-        print()
-        break
+        print(meu_dicionario)
+        
+        sortudo = sorted(meu_dicionario)
+        print('Chaves em ordem alfabética:', sortudo)
+
+        dicionario = list(meu_dicionario.copy())
+
+        alph = 'abcdefghijklmnopqrstuvwxyz'
+
+        for char in alph:
+                num = 0
+                for elemento in dicionario:
+                    if char in elemento[0]:
+                        num += 1
+                if num == 0:
+                    continue
+                else:
+                    print(f'Existe(m) {num} cor(es) que começa(m) com a letra: {char}')
+                
+                input('\nConcluído... Pressione ENTER para continuar.')
     else:
         input('Valor Inválido! Por favor, pressione ENTER para reiniciar')
-
-sortudo = sorted(meu_dicionario)
-print('Chaves em ordem alfabética:', sortudo)
-
-dicionario = list(meu_dicionario.copy())
-
-alph = 'abcdefghijklmnopqrstuvwxyz'
-
-for char in alph:
-        num = 0
-        for elemento in dicionario:
-            if char in elemento[0]:
-                num += 1
-        if num == 0:
-            continue
-        else:
-            print(f'Existe(m) {num} cor(es) que começa(m) com a letra: {char}')

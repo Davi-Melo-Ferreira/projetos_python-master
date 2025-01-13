@@ -26,8 +26,7 @@ while True:
             input('O dicionário citado foi escrito errado ou não existe, Pressione ENTER')
 
     elif opcao == '3':
-        print()
-        break
+        print(meu_dicionario)
+        input('\nConcluído... Pressione ENTER para continuar.')
     else:
         input('Valor Inválido! Por favor, pressione ENTER para reiniciar')
-print(meu_dicionario)
