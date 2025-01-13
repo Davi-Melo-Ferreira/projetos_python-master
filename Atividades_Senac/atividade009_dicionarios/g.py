@@ -44,7 +44,7 @@ while True:
         input('\nPressione qualquer tecla para continuar...')
 
     # Alterar o valor de uma chave
-    elif opcao == '2':
+    if opcao == '2':
         id_alterar = int(input('Digite o ID do item que deseja alterar: '))
         chave_alterar = input('Digite o nome da chave que deseja alterar (nome, idade, peso, altura): ').lower()
         novo_valor = input(f'Digite o novo valor para a chave {chave_alterar}: ')
@@ -65,7 +65,7 @@ while True:
         input('\nPressione qualquer tecla para continuar...')
 
     # Excluir um item específico
-    elif opcao == '3':
+    if opcao == '3':
         id_excluir = int(input('Digite o ID do item que deseja excluir: '))
         
         encontrado = False
@@ -82,13 +82,13 @@ while True:
         input('\nPressione qualquer tecla para continuar...')
 
     # Exibir apenas o nome e a altura
-    elif opcao == '4':
+    if opcao == '4':
         print("\nExibindo apenas nome e altura:")
         exibir_nome_altura(lista)
         input('\nPressione qualquer tecla para continuar...')
 
     # Gerar relatório final
-    elif opcao == '5':
+    if opcao == '5':
         print("\nGerando relatório final...")
 
         total_dados = 0

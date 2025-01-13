@@ -46,7 +46,7 @@ while True:
         input('\nPressione qualquer tecla para continuar...')
 
     # Adicionar um vinho
-    elif opcao == '2':
+    if opcao == '2':
         nome = input('Digite o nome do Vinho: ')
         tipo = input('Digite o tipo do vinho (Tinto, Branco, Rosé, etc.): ')
         teor = float(input('Digite o teor alcoólico (ex: 11.5): '))
@@ -58,7 +58,7 @@ while True:
         input('\nPressione qualquer tecla para continuar...')
 
     # Remover um vinho
-    elif opcao == '3':
+    if opcao == '3':
         escolha_3 = int(input('De qual número você deseja remover?: '))
         ind_escolha = escolha_3 - 1
         
@@ -78,7 +78,7 @@ while True:
         input('\nPressione qualquer tecla para continuar...')
 
     # Mostrar o dicionário
-    elif opcao == '4':
+    if opcao == '4':
         print("\nDicionário de Vinhos:")
         for dicionario in lista:
             for id_lista, elementos in dicionario.items():

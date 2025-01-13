@@ -11,9 +11,9 @@ while True:
     print("2. Associar participantes a um evento")
     print("3. Listar eventos com participantes")
     print("4. Gerar relatório")
-    print("5. Sair")
 
-    opcao = input("\nEscolha uma opção (1, 2, 3, 4, 5): ")
+
+    opcao = input("\nEscolha uma opção (1, 2, 3, 4): ")
 
     if opcao == '1':
         # Cadastro de um novo evento
@@ -102,11 +102,5 @@ while True:
             print(f"  Evento '{nome_evento}' tem {qtd_participantes} participantes.")
 
         input('\nPressione qualquer tecla para continuar...')
-
-    if opcao == '5':
-        # Sair do programa
-        print("\nSaindo do programa. Até mais!")
-        break
-
     else:
-        print("\nOpção inválida. Tente novamente.")
+        print('Escreveu erradão')

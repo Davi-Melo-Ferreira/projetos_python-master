@@ -1,13 +1,4 @@
-import os
-from datetime import datetime, timedelta
+import pywhatkit as kit
 
-os.system('cls')
-
-tarefas = {
-    1:{'data_vencimento': '24/03/2006'},
-    2:{'data_vencimento': '24/03/2007'}
-           }
-
-for tarefa in tarefas.values():
-    data_venc = datetime.strptime(tarefa['data_vencimento'], '%d/%m/%Y')
-    sorted(data_venc)
+# Parâmetros: número de telefone do destinatário, mensagem, hora e minuto
+kit.sendwhatmsg("+55xxxxxxxxxx", "Olá! Esta é uma mensagem automatizada.", 15, 30)  # Envia às 15:30

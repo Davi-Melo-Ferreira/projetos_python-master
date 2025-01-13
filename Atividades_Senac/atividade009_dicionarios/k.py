@@ -13,19 +13,30 @@ while True:
 
     opcao = input('\nEscolha uma opção (1, 2, 3, 4): ')
 
-    if opcao == '1': # Cadastro de nova tarefa
+    if opcao == '1':  # Cadastro de nova tarefa
         novo_id = len(tarefas) + 1
         nome_tarefa = input('Digite o nome da tarefa: ')
-        data_vencimento = input('Digite a data de vencimento (dd/mm/aaaa): ')
+
+        # Validação de data usando um loop
+        while True:
+            data_vencimento = input('Digite a data de vencimento (dd/mm/aaaa): ')
+            try:
+                data_verify = datetime.strptime(data_vencimento, '%d/%m/%Y')  # Tenta converter a data
+                break  # Sai do loop se a data for válida
+            except ValueError:
+                print('Data inválida! Certifique-se de usar o formato correto e valores válidos.')
+
         prioridade = input('Digite a prioridade (alta, média, baixa): ').lower()
 
+        # Verifica se a prioridade é válida
         while prioridade not in ['alta', 'média', 'baixa']:
             prioridade = input('Prioridade inválida! Escolha entre alta, média ou baixa: ').lower()
 
+        # Cadastra a tarefa
         tarefas[novo_id] = {
             'nome': nome_tarefa,
             'data_vencimento': data_vencimento,
-            'prioridade': prioridade
+            'prioridade': prioridade,
         }
 
         print('\nTarefa cadastrada com sucesso!')
@@ -38,7 +49,7 @@ while True:
             continue
         print('\nTarefas disponíveis:')
         for id_tarefa, tarefa in tarefas.items():
-                print(f'{id_tarefa}. {tarefa['nome']} - Vencimento: {tarefa['data_vencimento']} - Prioridade: {tarefa['prioridade']}')
+            print(f'{id_tarefa}: {tarefa["nome"]} - Vencimento: {tarefa["data_vencimento"]} - Prioridade: {tarefa["prioridade"]}')
 
         id_tarefa = int(input('\nDigite o ID da tarefa que deseja alterar: '))
 
@@ -55,12 +66,12 @@ while True:
                     else:
                         tarefas[id_tarefa]['prioridade'] = nova_prioridade
                         print('\nPrioridade alterada com sucesso!')
-                if escolha == '2':
+                elif escolha == '2':
                     nova_data = input('Digite a nova data de vencimento (dd/mm/aaaa): ')
                     tarefas[id_tarefa]['data_vencimento'] = nova_data
                     print('\nData de vencimento alterada com sucesso!')
                 else:
-                    print('\nOpção inválida!')
+                    ('\nOpção inválida!')
         else:
             print('\nID de tarefa inválido!')
 
@@ -72,11 +83,9 @@ while True:
         else:
             print('\nLista de Tarefas Ordenadas por Data de Vencimento:')
             # x = {'nome': 'Revisar projeto', 'data_vencimento'...... 
-            tarefas_ordenadas = sorted(tarefas.values(), 
-            key=lambda x: datetime.strptime(x['data_vencimento'], '%d/%m/%Y')
-            )
+            tarefas_ordenadas = sorted(tarefas.values(), key=lambda x: datetime.strptime(x['data_vencimento'], '%d/%m/%Y'))
             for tarefa in tarefas_ordenadas:
-                print(f'Tarefa: {tarefa['nome']} - Vencimento: {tarefa['data_vencimento']} - Prioridade: {tarefa['prioridade']}')
+                print(f'Tarefa: {tarefa["nome"]} - Vencimento: {tarefa["data_vencimento"]} - Prioridade: {tarefa["prioridade"]}')
 
         input('\nPressione qualquer tecla para continuar...')
 
@@ -86,7 +95,7 @@ while True:
             print('\nNenhuma tarefa cadastrada!')
         else:
             hoje = datetime.today() # define a data de hoje
-            proximo_mes = hoje + timedelta(days=30)
+            proximo_mes = hoje + timedelta(days=30) # timedelta define uma data
             tarefas_prioridade_alta = 0
             tarefas_proximo_mes = 0
 
