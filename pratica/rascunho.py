@@ -1,4 +1,5 @@
-import pywhatkit as kit
+import os
 
-# Parâmetros: número de telefone do destinatário, mensagem, hora e minuto
-kit.sendwhatmsg("+55xxxxxxxxxx", "Olá! Esta é uma mensagem automatizada.", 15, 30)  # Envia às 15:30
+os.system('cls')
+lista = { 1:{'nome': '02:03:00'}}
+print(lista[1]['nome'][1])
