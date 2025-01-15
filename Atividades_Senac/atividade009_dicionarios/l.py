@@ -17,7 +17,7 @@ while True:
 
     opcao = input('\nEscolha uma opção (1, 2, 3, 4): ')
 
-    if opcao == '1':
+    if opcao == '1': # Cadastrar filme
         id_novo = len(filmes) + 1
         titulo = input('Digite o Título do filme: ')
         genero = input('Digite o gênero do filme(terror, ação...): ')
@@ -32,7 +32,7 @@ while True:
         }
         print('\nFilme adicionado com sucesso')
         input('Pressione qualquer tecla para continuar....')
-    if opcao == '2':
+    if opcao == '2': # Alterar filme
         if not filmes:
             print('\nNenhum filme cadastrado!')
         else:
@@ -43,7 +43,7 @@ while True:
             filmes[opcao_id][opcao_valor] = novo_valor
             print('\nFilme alterado com sucesso')
         input('Pressione qualquer tecla para continuar....')
-    if opcao == '3':
+    if opcao == '3': # Deletar filme
         if not filmes:
             print('\nNenhum filme cadastrado!')
         else:
@@ -52,7 +52,7 @@ while True:
             if filmes[opcao_id]:
                 del filmes[opcao_id]
                 input('\n Concluído!!! Pressione qualquer tecla para continuar....')
-    if opcao == '4':
+    if opcao == '4': # x = {'nome': 'Revisar projeto', 'data_vencimento'...... 
         filmes_ordenados = sorted(filmes.values(), key=lambda x: (x['título']))
         id_filmes = 0
         cont_duracao = 0
@@ -63,7 +63,8 @@ while True:
                 cont_classif += 1
             if int(filmes['duração'][1]) > 2:
                 cont_duracao += 1
-                
+            
+            print('\nFilmes ordenados por título')
             print(f'\nFilme {id_filmes}. \nTítulo: {filmes["título"]} - Gênero: {filmes["gênero"]} - Duração: {filmes["duração"]} - Classificação: {filmes["classificação"]}')
             print(f'\n Existem {cont_classif} filmes que possuem indicação livre')
             print(f'\n Existem {cont_duracao} filmes que tem uma duração maior de 2 horas')
