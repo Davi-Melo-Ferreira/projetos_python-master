@@ -17,3 +17,5 @@ from datetime import datetime
 # data = datetime.strptime(viagem[1]['data de partida'], '%d/%m/%Y')
 # if data > data_venc:
 #     cont_duracao += 1
+
+print(datetime(2025, 12, 1))

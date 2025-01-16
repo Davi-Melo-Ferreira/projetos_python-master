@@ -6,7 +6,7 @@ def imprimir_lista(filmes):
     for id_filme, filme in filmes.items():
         print(f'\nFilme {id_filme}. \nTítulo: {filme["título"]} - Gênero: {filme["gênero"]} - Duração: {filme["duração"]} - Classificação: {filme["classificação"]}')
 
-filmes = {1: {'título':'over the garden wall', 'gênero':'terror','duração':'03:00:00', 'classificação':'livre'}}
+filmes = {}
 while True:
     os.system('cls')
     print('\nMenu de Opções:')
@@ -32,6 +32,7 @@ while True:
         }
         print('\nFilme adicionado com sucesso')
         input('Pressione qualquer tecla para continuar....')
+        
     if opcao == '2': # Alterar filme
         if not filmes:
             print('\nNenhum filme cadastrado!')
@@ -43,6 +44,7 @@ while True:
             filmes[opcao_id][opcao_valor] = novo_valor
             print('\nFilme alterado com sucesso')
         input('Pressione qualquer tecla para continuar....')
+        
     if opcao == '3': # Deletar filme
         if not filmes:
             print('\nNenhum filme cadastrado!')
@@ -52,8 +54,9 @@ while True:
             if filmes[opcao_id]:
                 del filmes[opcao_id]
                 input('\n Concluído!!! Pressione qualquer tecla para continuar....')
+                
     if opcao == '4': # x = {'nome': 'Revisar projeto', 'data_vencimento'...... 
-        filmes_ordenados = sorted(filmes.values(), key=lambda x: (x['título']))
+        filmes_ordenados = sorted(filmes.values(), key=lambda x: (x['título'])) #lambda é quase como se fosse um for x: pegue de x o título
         id_filmes = 0
         cont_duracao = 0
         cont_classif = 0
@@ -69,3 +72,6 @@ while True:
             print(f'\n Existem {cont_classif} filmes que possuem indicação livre')
             print(f'\n Existem {cont_duracao} filmes que tem uma duração maior de 2 horas')
             input('\nPressione qualquer tecla para continuar....')
+    else:
+        print('Nenhum Filme Cadastrado')
+        input('\nPressione qualquer tecla para continuar....')
