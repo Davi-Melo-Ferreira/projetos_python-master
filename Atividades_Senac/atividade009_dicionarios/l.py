@@ -30,9 +30,10 @@ while True:
             'duração':duracao,
             'classificação':classificacao
         }
+        
         print('\nFilme adicionado com sucesso')
         input('Pressione qualquer tecla para continuar....')
-        
+
     if opcao == '2': # Alterar filme
         if not filmes:
             print('\nNenhum filme cadastrado!')
