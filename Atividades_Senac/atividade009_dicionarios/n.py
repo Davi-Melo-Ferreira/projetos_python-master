@@ -12,10 +12,6 @@ def imprimir_lista(produtos):
     for id_produto, produto in produtos.items():
         print(f'{id_produto}: {produto["nome"]} - preço: R${produto["preço"]:.2f} - categoria: {produto["categoria"]}')
 
-def aplicar_descontos(produtos, desconto_percentual):
-    for produto in produtos.values():
-        produto['preço'] -= produto['preço'] * (desconto_percentual / 100)
-
 while True:
     os.system('cls')
     print('\nMenu de Opções:')
@@ -25,7 +21,7 @@ while True:
     print('4. Produtos ordenados por nome')
     print('5. Gerar relatório')
 
-    opcao = input('\nEscolha uma opção (1, 2, 3, 4, 5, 6): ')
+    opcao = input('\nEscolha uma opção (1, 2, 3, 4, 5): ')
 
     if opcao == '1':  # Cadastro de novo produto
         novo_id = len(produtos) + 1
@@ -63,8 +59,7 @@ while True:
 
     elif opcao == '3':  # Aplicar descontos
         desconto = float(input('Digite o percentual de desconto (ex: 10 para 10%): '))
-        aplicar_descontos(produtos, desconto)
-        print('\nDescontos aplicados com sucesso!')
+        print('\nDesconto aplicado com sucesso!')
         input('\nPressione qualquer tecla para continuar...')
 
     elif opcao == '4':  # Produtos ordenados por nome
@@ -73,16 +68,23 @@ while True:
         else:
             produtos_ordenados = sorted(produtos.values(), key=lambda x: x['nome'])
             print('\nProdutos ordenados por nome:')
-            for produto in produtos_ordenados:
-                print(f'{produto["nome"]} - preço: R${produto["preço"]:.2f} - categoria: {produto["categoria"]}')
+            def imprimir_lista_ordenada(produtos):
+                for produto in produtos_ordenados:
+                    print(f'{produto["nome"]} - preço: R${produto["preço"]:.2f} - categoria: {produto["categoria"]}')
         input('\nPressione qualquer tecla para continuar...')
 
     elif opcao == '5':  # Gerar relatório
         if not produtos:
             print('\nNenhum produto cadastrado!')
         else:
-            abaixo_50 = sum(1 for p in produtos.values() if p['preço'] < 50)
-            eletronicos = sum(1 for p in produtos.values() if p['categoria'].lower() == 'eletronicos')
+            imprimir_lista(produtos)
+            for produto in produtos.values():
+                abaixo_50 = 0
+                eletronicos = 0
+                if produto['preço'] * desconto / 100 < 50:
+                       abaixo_50 += 1
+                if produto['categoria'] == 'eletrônico':
+                        eletronicos += 1
             print('\nRelatório:')
             print(f'Produtos com preço inferior a R$50: {abaixo_50}')
             print(f'Produtos na categoria "Eletrônicos": {eletronicos}')
