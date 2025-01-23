@@ -4,18 +4,18 @@ import os
 
 
 os.system('cls')
+
 dicio = {}
 
-def cadastro(dicio):
-    nome = input('Digite o Nome do(a) aluno(a): ')
-    matricula = input('Digite a Matrícula do(a) aluno(a)(max: 4 dígitos): ')
-    nasc = input('Digite a data de nascimento(ex: 24/03/2006): ')
-    dicio = {}
+def cadastro(nome, matricula, nasc):
     dicio.update({'nome':nome, 'matricula':matricula, 'nascimento': nasc})
     return dicio
 
-# Invocação da função
-(dicio) = cadastro(dicio)
+nome = input('Digite o Nome do(a) aluno(a): ')
+matricula = input('Digite a Matrícula do(a) aluno(a)(max: 4 dígitos): ')
+nasc = input('Digite a data de nascimento(ex: 24/03/2006): ')
 
-for chave, valor in dicio.items():
-    print(f'{chave}: {valor}')
+# Invocação da função
+matriculado = cadastro(nome, matricula, nasc)
+
+print(matriculado)
