@@ -54,11 +54,20 @@ while invicto == True:
             acertos += 1
             print('Parabés, Você acertou!!')
             input('Pressione qualquer tecla para a próxima pergunta...')
+            os.system('cls')
         else:
             print('Você Errou!!!')
+            input('Pressione qualquer tecla para sair...')
+            os.system('cls')
             break
     invicto = False
 
 qntd_perguntas = len(estado_capital)
+if acertos == qntd_perguntas:
+    print('Parabéns, Você venceu!!!')
+else:
+    print('Mais sorte da próxima vez...')
+print('-'*70)
 print(f'Você acertou a capital de {acertos} estados')
-print(f'Resultado: {acertos}/{qntd_perguntas}')
+print('-'*70)
+print(f'Resultado: {acertos}/{qntd_perguntas}\n')
