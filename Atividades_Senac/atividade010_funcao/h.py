@@ -9,3 +9,8 @@ import os
 
 
 os.system('cls')
+
+codigo = input('Digite seu código: ')
+nome = input('Digite seu nome: ')
+altura = input('Digite sua altura: ')
+peso = input('Digite seu p')
