@@ -40,16 +40,17 @@ invicto = True
 
 while invicto == True:
     acertos = 0
-    def randomizar(dicionario):
+    def randomizar_estados(dicionario):
         itens = list(dicionario.items())
         random.shuffle(itens)
         estado_capital = dict(itens)
         return estado_capital
 
-    estado_capital = randomizar(estados_capitais)
+    
+    estado_capital = randomizar_estados(estados_capitais)
     
     for chave, valor in estado_capital.items():
-        pergunta = input(f'Qual a capital de {chave}?: ').lower()
+        pergunta = input(f'Qual a capital de {chave}?(): ').lower()
         if pergunta == valor.lower():
             acertos += 1
             print('Parabés, Você acertou!!')
