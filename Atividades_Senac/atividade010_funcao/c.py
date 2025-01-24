@@ -7,21 +7,28 @@ import os
 os.system('cls')
 cadastro = {}
 
+# função para adicionar o cadastro
+def cadastrar(id, nome, matricula, nasc):
+    cadastro[id] = { # aqui diz: id chave foi atribuido o valor {'nome':nome.....}
+        'nome':nome,
+        'matricula':matricula,
+        'nascimento':nasc
+    }
+    return cadastro
+
 opcao = 's'
-while opcao == 's':
-    id = len(cadastro) + 1
+while opcao == 's': # loop infinito até opcao == 'n'
+    id = len(cadastro) + 1  # linha 21 a 24: entrada
     nome = input('Digite o Nome do(a) aluno(a): ')
     matricula = input('Digite a Matrícula do(a) aluno(a)(max: 4 dígitos): ')
     nasc = input('Digite a data de nascimento(ex: 24/03/2006): ')
     
-    cadastro[id] = {
-        'nome':nome,
-        'matrícula':matricula,
-        'nascimento':nasc
-    }
+    # invocando a função
+    cadastramento = cadastrar()    
+
     opcao = input('Deseja continuar?(s/n): ').lower()
 
-for id, dicionario in cadastro.items():
-    print(id,':\n')
+for id_chave, dicionario in cadastro.items():
+    print(id_chave,'ª Matrícula:')
     for chave, valor in dicionario.items():
         print(f'{chave} : {valor}')

@@ -36,6 +36,13 @@ estados_capitais = {
     'Tocantins': 'Palmas'
 }
 
+def exibir_reultado(acertos, qntd_perguntas):
+    print('-'*70)
+    print(f'Você acertou a capital de {acertos} estados(s).')
+    print('-'*70)
+    print(f'Resultado: {acertos}/{qntd_perguntas}\n')
+    return acertos, qntd_perguntas
+
 invicto = True
 
 while invicto == True:
@@ -67,7 +74,5 @@ if acertos == qntd_perguntas:
     print('Parabéns, Você venceu!!!')
 else:
     print('Mais sorte da próxima vez...')
-print('-'*70)
-print(f'Você acertou a capital de {acertos} estados')
-print('-'*70)
-print(f'Resultado: {acertos}/{qntd_perguntas}\n')
+
+resultado = exibir_reultado(acertos, qntd_perguntas)

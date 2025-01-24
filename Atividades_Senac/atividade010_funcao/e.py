@@ -5,4 +5,6 @@ import os
 
 os.system('cls')
 
-# def definir_imc():
+altura = float(input('Digite sua altura: '))
+peso = float(input('Digite o seu peso: '))
+

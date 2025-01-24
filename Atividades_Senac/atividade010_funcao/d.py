@@ -4,14 +4,14 @@ import os
 
 os.system('cls')
 
-# definindo a função rarenfait para celsinhos
-def farenrait_celso(farenhait):
-    celsinhos = (((farenhait - 32) * 5) / 9)
-    return celsinhos
+# definindo a função rarenfait para celsius
+def farenrait_em_celso(farenhait):
+    celsius = (((farenhait - 32) * 5) / 9)
+    return celsius
 
 farenhait = int(input('Digite a temperatura em farenhait: '))
 
-# invocando função celsinhos
-celsinhos = farenrait_celso(farenhait)
+# invocando função celsius
+celsius = farenrait_em_celso(farenhait)
 
-print(f'Os {farenhait} graus em farenhait em celsius ficará {celsinhos:.2f} graus celsius.')
+print(f'Os {farenhait} graus em farenhait em celsius ficará {celsius:.2f} graus celsius.')
