@@ -10,7 +10,46 @@ import os
 
 os.system('cls')
 
-codigo = input('Digite seu código: ')
-nome = input('Digite seu nome: ')
-altura = input('Digite sua altura: ')
-peso = input('Digite seu p')
+dicionario = {}
+opcao = 's'
+while opcao == 's':
+    
+    codigo = int(input('Digite seu código: '))
+    nome = input('Digite seu nome: ')
+    altura = float(input('Digite sua altura: '))
+    peso = float(input('Digite seu peso: '))
+
+    def cadastrar(codigo, nome, altura, peso):
+        dicionario[codigo] = {'nome': nome, 'altura': altura, 'peso': peso}
+        return dicionario
+
+    cadastrados = cadastrar(codigo, nome, altura, peso)
+
+    opcao = input('Digite "s" para adicionar um cliente ou "0" para sair: ')
+    
+    # limpar o codigo
+    os.system('cls')
+    
+    if opcao == '0':
+        break
+
+
+
+def gerar_somas(cadastros):
+    soma_peso = 0
+    soma_altura = 0
+    for dicionario in cadastrados.values():
+        soma_peso += dicionario['peso']
+        soma_altura += dicionario['altura']
+    return soma_altura, soma_peso
+
+soma_altura, soma_peso = gerar_somas(cadastrados)
+
+media_altura = soma_altura / len(cadastrados)
+media_peso = soma_peso / len(cadastrados)
+
+for codigo, dicionario in cadastrados.items():
+    print(f'Cliente de código {codigo}:\n Nome: {nome} - Altura: {altura} - Peso: {peso}.\n')
+
+print(f'A média de altura dos clientes é de {soma_altura:.2f}')
+print(f'A média do peso dos clientes é de {soma_peso:.2f}\n')
