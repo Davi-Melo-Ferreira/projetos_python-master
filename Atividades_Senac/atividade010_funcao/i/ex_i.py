@@ -3,7 +3,7 @@
 # Se o usuário errar a resposta, o programa será finalizado apresentando quantas perguntas estão corretas. 
 import os
 import random
-
+from modulo_i import exibir_reultado, randomizar
 os.system('cls')
 
 # Lista de estados do Brasil
@@ -36,23 +36,9 @@ estados_capitais = {
     'Tocantins': 'Palmas'
 }
 
-# Função para exibir os resultados
-def exibir_reultado(acertos, qntd_perguntas):
-    print('-'*70)
-    print(f'Você acertou a capital de {acertos} estados(s).')
-    print('-'*70)
-    print(f'Resultado: {acertos}/{qntd_perguntas}\n')
-    return acertos, qntd_perguntas
-
-
 invicto = True
 while invicto == True:
     acertos = 0
-    def randomizar(dicionario): # função para randomizar a ordem dos estados
-        itens = list(dicionario.items()) # retorna uma tupla
-        random.shuffle(itens) # embaralha os valores dentro da tupla
-        estado_capital = dict(itens) # transforma a tupla em dicionário
-        return estado_capital # packing
 
     estado_capital = randomizar(estados_capitais) #umpacking
     

@@ -3,17 +3,8 @@
 #a quantidade de números pares e a quantidade de números ímpares.
 import os
 
+from modulo_a import verificar_paridade, quantidades
 
-def parimpar(lista):
-    
-    lista_par = []
-    lista_impar = []
-    for i in lista:
-        if i % 2 == 0:
-            lista_par.append(i)
-        else:
-            lista_impar.append(i)
-    return lista_par, lista_impar
 
 opcao = 's'
 lista = []
@@ -25,10 +16,12 @@ while opcao == 's':
     lista.append(numero)
     opcao = input('Deseja continuar?(s/n): ').lower()
 
-(lista_par, lista_impar) = parimpar(lista)
+(lista_par, lista_impar) = verificar_paridade(lista)
+
+qntd_par, qntd_impar = quantidades(lista_par, lista_impar)
 
 os.system('cls')
 print(f'Números Ímpares: {lista_impar}')
-print(f'Quantidade de Números Ímpares: {len(lista_impar)}')
-print(f'\nQuantidade de Números Pares: {len(lista_par)}')
+print(f'Quantidade de Números Ímpares: {qntd_impar}')
+print(f'\nQuantidade de Números Pares: {qntd_par}')
 print(f'Números Pares: {lista_par}')

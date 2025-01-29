@@ -2,13 +2,8 @@
 # Depois retorne o seu IMC.
 import os
 
-
+from modulo_e import calcular_imc
 os.system('cls')
-
-# Aplicando a função
-def calcular_imc(altura, peso):
-    calculo = peso / (altura ** 2)
-    return calculo
 
 # Entrada
 altura = float(input('Digite sua altura: '))

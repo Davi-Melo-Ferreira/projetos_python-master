@@ -2,20 +2,19 @@
 #Depois imprima os resultados cadastrados utilizando uma estrutura de repetição for.
 import os
 
-
+from modulo_b import cadastro
 os.system('cls')
 
-dicio = {}
-
-def cadastro(nome, matricula, nasc):
-    dicio.update({'nome':nome, 'matricula':matricula, 'nascimento': nasc})
-    return dicio
+dicionario = {}
 
 nome = input('Digite o Nome do(a) aluno(a): ')
 matricula = input('Digite a Matrícula do(a) aluno(a)(max: 4 dígitos): ')
 nasc = input('Digite a data de nascimento(ex: 24/03/2006): ')
 
-# Invocação da função
-matriculado = cadastro(nome, matricula, nasc)
+os.system('cls')
 
-print(matriculado)
+# Invocação da função
+matriculado = cadastro(nome, matricula, nasc, dicionario)
+
+for chave, valor in matriculado.items():
+    print(f'{chave}: {valor}')
