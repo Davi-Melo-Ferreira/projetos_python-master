@@ -7,7 +7,7 @@ largura, altura = 1000, 600
 tela = pygame.display.set_mode((largura, altura))
 
 # Definindo o título da janela
-pygame.display.set_caption('Thiago abaitolado...')
+pygame.display.set_caption('Projeto_Teste')
 
 rodando = True
 while rodando:
