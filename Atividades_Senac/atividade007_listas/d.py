@@ -4,9 +4,9 @@ import os
 
 os.system('cls')
 
-lista_n = ['Davi', 'Pedro', 'Guilherme', 'Ronald','Kayky', 'Renato']
+lista_nomes = ['Davi', 'Pedro', 'Guilherme', 'Ronald','Kayky', 'Renato']
 
-if 'pedro' in lista_n:
+if 'pedro' in lista_nomes:
     print('Pedro está na lista!')
 else:
     print('Pedro não está na lista!')

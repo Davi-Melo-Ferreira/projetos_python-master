@@ -7,12 +7,12 @@ os.system('cls')
 #mega-sena = 6, loto fácil = 15
 
 print('(----- MEGA-SENA -----)')
-listam = []
+lista_megasena = []
 for i in range(1, 7):
-    listam.append(random.randint(1, 101))
+    lista_megasena.append(random.randint(1, 101))
 
 print('Números escolhidos:')
-print(listam)
+print(lista_megasena)
 print()
 
 print('(----- LOTO-FÁCIL -----)')

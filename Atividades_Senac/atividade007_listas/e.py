@@ -5,8 +5,8 @@ import os
 os.system('cls')
 
 lista = []
-listap = []
-listai = []
+lista_pares = []
+lista_impares = []
 
 for i in range(1, 8):
     nums = int(input(f'Digite o {i}º número: '))
@@ -14,8 +14,8 @@ for i in range(1, 8):
     
 for i in lista:
     if i % 2 == 0:
-        listap.append(i)
+        lista_pares.append(i)
     else:
-        listai.append(i)
-print(f'Lista de números pares: {listap}')
-print(f'Lista de números ímpares: {listai}')
+        lista_impares.append(i)
+print(f'Lista de números pares: {lista_pares}')
+print(f'Lista de números ímpares: {lista_impares}')

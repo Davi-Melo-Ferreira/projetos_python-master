@@ -13,14 +13,14 @@ os.system('cls')
 # imprimir números aleatórios em uma lista
 lista = []
 while True:
-    resp = input('Digite um número ou digite: (s-0) para sair: ').lower().replace(' ','')
-    if resp == 's' or resp == '0':
+    resposta = input('Digite um número ou digite: (s-0) para sair: ').lower().replace(' ','')
+    if resposta == 's' or resposta == '0':
         print('Saindo...')
         break
-    elif not resp.isnumeric():
+    elif not resposta.isnumeric():
         print('Número inválido')
     else:
-        num = int(resp)
+        num = int(resposta)
         lista.append(num)
 if lista == []:
     print('Lista vazia!')
