@@ -1,19 +1,14 @@
 import pygame
 import os
 from pygame.locals import *
-
+from valores import largura, altura, x, y, velocidade, tamanho
 pygame.init()
 
 # definindo tamanho de tela
-largura, altura = 1000, 600
 tela = pygame.display.set_mode((largura, altura))
 
 # Definindo o título da janela
 pygame.display.set_caption('Projeto_Teste')
-
-# Definindo objeto player
-x, y = 400, 230
-tamanho = 30
 
 clock = pygame.time.Clock()
 
@@ -27,17 +22,27 @@ while rodando:
     
     teclas = pygame.key.get_pressed()
     if teclas[pygame.K_d] or teclas[pygame.K_RIGHT]:
-        x += 3
+        verify_x = x + velocidade
+        if not pygame.Rect(verify_x, y, tamanho, tamanho).colliderect(parede):
+            x = verify_x
     if teclas[pygame.K_a] or teclas[pygame.K_LEFT]:
-        x -= 3
+        verify_x = x - velocidade
+        if not pygame.Rect(verify_x, y, tamanho, tamanho).colliderect(parede):
+            x = verify_x
     if teclas[pygame.K_s] or teclas[pygame.K_DOWN]:
-        y += 3
+        verify_y = y + velocidade
+        if not pygame.Rect(x, verify_y, tamanho, tamanho).colliderect(parede):
+            y = verify_y
     if teclas[pygame.K_w] or teclas[pygame.K_UP]:
-        y -= 3
+        verify_y = y - velocidade
+        if not pygame.Rect(x, verify_y, tamanho, tamanho).colliderect(parede):
+            y = verify_y
         
-    #                      (R, G,  B )
-    pygame.draw.rect(tela, (0, 250, 0), (x, y, tamanho, tamanho))
-
+    #objeto_player         (R, G,  B )
+    player = pygame.draw.rect(tela, (0, 250, 0), (x, y, tamanho, tamanho))
+    #objeto_parede
+    parede = pygame.draw.rect(tela, (0, 0, 250), (200, 300, tamanho, tamanho))
+    
     pygame.display.update()
     clock.tick(60)  # Limita a 60 FPS
 os.system('cls')
