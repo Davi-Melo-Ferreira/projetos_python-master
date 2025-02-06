@@ -4,4 +4,4 @@ altura = 600
 tamanho = 30
 x = largura/2 - tamanho/2
 y = altura/2 - tamanho/2
-velocidade = 3
+velocidade = 2
