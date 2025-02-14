@@ -39,11 +39,11 @@ class Equacao:
         return self._somatorio
     
     def calcular_multiplicacao(self):
-        self._multiplicado = self._a * self._b * self._c
+        return self._a * self._b * self._c
     
     def get_multiplicacao(self):
-        self.calcular_multiplicacao()
-        return self._multiplicado
+        resultado = self.calcular_multiplicacao()
+        return resultado
 
     def printar(self):
         print(f'A soma dos valores {self._a} + {self._b} + {self._c} = {self.get_somatorio()}')
