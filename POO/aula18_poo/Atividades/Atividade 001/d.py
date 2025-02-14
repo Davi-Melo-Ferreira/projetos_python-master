@@ -4,28 +4,41 @@ A saída da divisão precisará ser formatada com 4 casas decimais.
 '''
 class Divisao:
     def __init__(self, a, b):
-        self.set_a(a)
-        self.set_b(b)
-    
-    def get_a(self):
-        return self._a
-    
-    def set_a(self, a):
         self._a = a
-
-    def get_b(self):
-        return self._b
-    
-    def set_b(self, b):
         self._b = b
     
+    @property
+    def a(self):
+        return self._a
+    
+    @a.setter
+    def a(self, a):
+        self._a = a
+
+    @property
+    def b(self):
+        return self._b
+    
+    @b.setter
+    def b(self, b):
+            if b != 0:
+                self._b = b
+            else:
+                self._b = None
+    
     def calcular_divisao(self):
-        return self._a / self._b
+        if self.b is None:
+            return None
+        else:
+            return self.a / self.b
     
     def get_divisao(self):
         resultado = self.calcular_divisao()
-        return f'{resultado:.4f}'
+        if resultado is None:
+            print('Indivisível por zero!')
+        else:
+            return f'{resultado:.4f}'
 
-valor = Divisao(9, 3)
+valor = Divisao(9, 0)
 
 print(valor.get_divisao())

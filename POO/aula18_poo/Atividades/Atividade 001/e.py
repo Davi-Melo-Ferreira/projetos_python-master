@@ -3,17 +3,18 @@ Faça um programa que receba um número inteiro e mostre o sucessor e antecessor
 '''
 class Numero:
     def __init__(self, a):
-        self.set_a(a)
+        self._a = a
 
-    
-    def get_a(self):
+    @property
+    def a(self):
         return self._a
     
-    def set_a(self, a):
+    @a.setter
+    def a(self, a):
         self._a = a
     
     def mostrar_sucessor_antecessor(self):
-        return self._a + 1, self._a - 1
+        return self.a + 1, self.a - 1
 
     def get_sucessor_antecessor(self):
         sucessor, antecessor = self.mostrar_sucessor_antecessor()
