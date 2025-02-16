@@ -1,35 +1,23 @@
-from valores import largura, altura, tamanho, velocidade, x, y
-from meu_erro import parede
-
 import pygame
-from pygame.locals import *
+from pygame import *
+from arrow_knife_jump_protect import tela
 
 class Player:
-    def __init__(self):
-        pass
-    
-    def mover(self):
-        teclas = pygame.key.get_pressed()
-        if teclas[K_d] or teclas[K_RIGHT]:
-            verify_x = x + velocidade
-            if not pygame.Rect(verify_x, y, tamanho, tamanho).colliderect(parede):
-                x = verify_x
-        if teclas[K_a] or teclas[K_LEFT]:
-            verify_x = x - velocidade
-            if not pygame.Rect(verify_x, y, tamanho, tamanho).colliderect(parede):
-                x = verify_x
+    def __init__(self, vida, x, y, tamanho, velocidade):
+        self.vida = vida
+        self.x = x
+        self.y = y
+        self.tamanho = tamanho
+        self.velocidade = velocidade
 
-        if teclas[K_LSHIFT] or teclas[K_RSHIFT]:
-            velocidade = 5
-        else:
-            velocidade = 2
+    def criar_sprite(self):
+        pygame.draw.rect(tela, (255, 255, 255), (self.x, self.y, self.tamanho, self.tamanho))
 
-    def atacar(self):
-        pass
-    
-    def pular(self):
-        pass
-    
-    def mudar_arma(self):
-        
-        pass
+    def andar(self):
+        tecla = pygame.key.get_pressed()
+        if tecla[K_a]:
+            self.x -= self.velocidade
+        if tecla[K_d]:
+            self.x += self.velocidade
+
+jogador = Player(10, 500, 300, 30, 5)
