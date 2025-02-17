@@ -7,37 +7,31 @@ class Divisao:
         self._a = a
         self._b = b
     
-    @property
-    def a(self):
+    def get_a(self):
         return self._a
-    
-    @a.setter
-    def a(self, a):
-        self._a = a
 
-    @property
-    def b(self):
+    def get_b(self):
         return self._b
     
-    @b.setter
-    def b(self, b):
-            if b != 0:
-                self._b = b
-            else:
-                self._b = None
+    def set_a(self, a):
+        self._a = a
+    
+    def set_b(self, b):
+        self._b = b
     
     def calcular_divisao(self):
-        if self.b is None:
-            return None
+        if self._b != 0:
+            divisao = self._a / self._b
+            return divisao
         else:
-            return self.a / self.b
+            return None
     
     def get_divisao(self):
-        resultado = self.calcular_divisao()
-        if resultado is None:
+        self._resultado = self.calcular_divisao()
+        if self._resultado is None:
             print('Indivisível por zero!')
         else:
-            return f'{resultado:.4f}'
+            return f'{self._resultado:.4f}'
 
 valor = Divisao(9, 0)
 
