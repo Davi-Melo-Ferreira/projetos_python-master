@@ -1,7 +1,7 @@
 import pygame
 import os
 from pygame.locals import *
-from valores import largura, altura, x, y, velocidade, tamanho
+from Pygame.pratica.valores import largura, altura, x, y, velocidade, tamanho
 pygame.init()
 
 # definindo tamanho de tela
