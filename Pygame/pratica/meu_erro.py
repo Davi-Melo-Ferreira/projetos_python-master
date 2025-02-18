@@ -1,7 +1,7 @@
 import pygame
 import os
-from pygame.locals import *
-from Pygame.pratica.valores import largura, altura, x, y, velocidade, tamanho
+from pygame import *
+from valores import largura, altura, x, y, velocidade, tamanho
 pygame.init()
 
 # definindo tamanho de tela
@@ -50,5 +50,5 @@ while rodando:
     pygame.display.update()
     clock.tick(60)  # Limita a 60 FPS
 os.system('cls')
-    
+
 pygame.quit()

@@ -4,9 +4,9 @@ Faça um programa com entrada de dados para calcular o perímetro de um retângu
 
 class Retangulo:
     def __init__(self, a, b, c):
-        self.set_a(a)
-        self.set_b(b)
-        self.set_c(c)
+        self._a = a
+        self._b = b
+        self._c = c
         
     def get_a(self):
         return self._a
