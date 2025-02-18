@@ -9,7 +9,7 @@ class ClassePai:
     # Para sobrecarregar
     # Vai ser usada para soma 2 números
     def metodo_classe(self):
-        return self.b - self.a
+        pass
 
 class ClasseFilha(ClassePai):   # Classe derivada
     # Método construtor
