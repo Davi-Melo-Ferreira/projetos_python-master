@@ -15,6 +15,10 @@ class Superficie:
         self._nome = nome
         self._area = area
         self._tipo_superficie = tipo_superficie
+        self.porta = {}
+        self.parede = {}
+        self.teto = {}
+        self.chao = {}
         
     @property
     def nome(self):
@@ -43,7 +47,10 @@ class Superficie:
     def calcular_tinta(self):
         pass
     
-    
+    def cadastrar(self):
+        pass
+
+
 class Parede(Superficie):
     def __init__(self, nome, area, tipo_superficie):
         super().__init__(nome, area, tipo_superficie)
@@ -52,6 +59,11 @@ class Parede(Superficie):
         self._litros = (self._area / 10) * 4
         self._valor = self._litros * 46.50
         return f'{self._litros} litros para {self._area}m² equivalem a {self._valor}R$'
+
+    def cadastrar(self):
+        self.parede[f'Parede - {self._nome}'] = {'área' : self._area}
+        return self.parede
+
 
 class Teto(Superficie):
     def __init__(self, nome, area, tipo_superficie):
@@ -62,34 +74,96 @@ class Teto(Superficie):
         self._valor = self._litros * 46.50
         return f'{self._litros} litros para {self._area}m² equivalem a {self._valor}R$'
 
+    def cadastrar(self):
+        self.teto[f'Teto - {self._nome}'] = {'área' : self._area}
+        return self.teto
+
+
+class Chao(Superficie):
+    def __init__(self, nome, area, tipo_superficie):
+        super().__init__(nome, area, tipo_superficie)
+        
+    def calcular_tinta(self):
+        self._litros = (self._area / 8) * 4
+        self._valor = self._litros * 46.50
+        return f'{self._litros} litros para {self._area}m² equivalem a {self._valor}R$'
+
+    def cadastrar(self):
+        self.chao[f'Chão - {self._nome}'] = {'área' : self._area}
+        return self.chao
 
 class Porta(Superficie):
     def __init__(self, nome, area, tipo_superficie):
         super().__init__(nome, area, tipo_superficie)
         
     def calcular_tinta(self):
-        self._litros = (self._area / 4) * 4
+        self._litros = (self._area / 4)
         self._valor = self._litros * 46.50
         return f'{self._litros} litros para {self._area}m² equivalem a {self._valor}R$'
-
-nome = input('Nome: ').lower()
-area = float(input('Area: '))
-tipo_superficie = input('Tipo de superfície(porta, parede, teto): ').lower()
-
-if tipo_superficie == 'parede':
-    obj = Parede(nome, area, tipo_superficie)
-    print(obj.calcular_tinta())
-elif tipo_superficie == 'porta':
-    obj = Porta(nome, area, tipo_superficie)
-    print(obj.calcular_tinta())
-elif tipo_superficie == 'teto':
-    obj = Teto(nome, area, tipo_superficie)
-    print(obj.calcular_tinta())
-
-superficies = []
     
-superficies.append(Porta(nome, area))
-superficies.append(Teto(nome, area))
+    def cadastrar(self):
+        self.porta[f'Porta - {self._nome}'] = {'área' : self._area}
+        return self.porta
 
-for superficie in superficies:
-    print(superficie)
+
+class Cadastro(Parede, Porta, Teto, Chao): # Herança múltipla
+    def __init__(self, nome, area, tipo_superficie):
+        super().__init__(nome, area, tipo_superficie)
+        self.dicionario = {}
+    
+    def cadastrar(self):
+        self.dicionario[1] = self.parede
+        self.dicionario[2] = self.teto
+        self.dicionario[3] = self.chao
+        self.dicionario[4] = self.porta
+        return self.dicionario
+    
+    def printar(self):
+        for i in self.dicionario.items():
+            print(i)
+
+def main():
+    while True:
+        print('\n.Porta',
+            '\n.Parede',
+            '\n.Teto',
+            '\n.Chão'
+            )
+        
+        tipo_superficie = input('Escolha a superfície: ').lower()
+        
+        print('\n.Quarto',
+        '\n.Banheiro',
+        '\n.Sala',
+        '\n.Cozinha',
+        )
+        
+        nome = input('De qual cômodo desejas adicionar?: ').lower()
+        area = float(input('Digite a área da superfície do cômodo desejado em metros: '))
+        
+        if tipo_superficie == 'porta':
+            obj = Porta(nome, area, tipo_superficie)
+            obj.cadastrar()
+        if tipo_superficie == 'parede':
+            obj = Parede(nome, area, tipo_superficie)
+            obj.cadastrar()
+        if tipo_superficie == 'teto':
+            obj = Teto(nome, area, tipo_superficie)
+            obj.cadastrar()
+        if tipo_superficie == 'chão' or tipo_superficie == 'chao':
+            obj = Chao(nome, area, tipo_superficie)
+            obj.cadastrar()
+        
+        opcao = input('Desejas continuar?(s/n): ').lower()
+        
+        if opcao == 's':
+            continue
+        elif opcao == 'n':
+            break
+        else:
+            print('Inválido!!')
+
+            
+
+if __name__ == '__main__':
+    main()

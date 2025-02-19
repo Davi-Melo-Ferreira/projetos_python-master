@@ -1,17 +1,50 @@
+# dicionario = {}
+
+porta = {}
+parede = {}
+teto = {}
+chao = {}
+
 while True:
-    print('\n1. Porta',
-          '\n2. Parede',
-          '\n3. Teto',
-          '\n4. Chão'
+    print('\n.Porta',
+          '\n.Parede',
+          '\n.Teto',
+          '\n.Chão'
           )
     
-    tipo_superficie = int(input('Escolha a superfície: '))
+    tipo_superficie = input('Escolha a superfície: ').lower()
     
-    print('\n1. Quarto',
-      '\n2. Banheiro',
-      '\n3. Sala',
-      '\n4. Cozinha',
+    print('\n.Quarto',
+      '\n.Banheiro',
+      '\n.Sala',
+      '\n.Cozinha',
       )
     
-    comodo = int(input('De qual cômodo desejas adicionar?: '))
+    comodo = input('De qual cômodo desejas adicionar?: ').lower()
     area = float(input('Digite a área da superfície do cômodo desejado em metros: '))
+    
+    if tipo_superficie == 'porta':
+      porta[f'Porta - {comodo}'] = {'área' : area}
+    if tipo_superficie == 'parede':
+      parede[f'Parede - {comodo}'] = {'área' : area}
+    if tipo_superficie == 'teto':
+      teto[f'Teto - {comodo}'] = {'área' : area}
+    if tipo_superficie == 'chão' or tipo_superficie == 'chao':
+      chao[f'Chão - {comodo}'] = {'área' : area}
+    
+    opcao = input('Desejas continuar?(s/n): ').lower()
+    
+    if opcao == 's':
+      continue
+    elif opcao == 'n':
+      break
+    else:
+      print('Inválido!!')
+
+# print(porta)
+# print(parede)
+# print(teto)
+# print(chao)
+
+for i in porta, parede, teto, chao:
+  print(i)
