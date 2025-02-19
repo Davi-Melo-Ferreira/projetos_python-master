@@ -10,6 +10,7 @@ e usar um laço for para calcular o gasto de tinta e exibir os dados de cada sup
 Também deve ser possível filtrar as superfícies por tipo.
 O objetivo é praticar o uso de listas, loops, condicionais e herança.
 '''
+
 class Superficie:
     def __init__(self, nome, area, tipo_superficie):
         self._nome = nome
