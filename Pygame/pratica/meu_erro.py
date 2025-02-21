@@ -2,6 +2,8 @@ import pygame
 import os
 from pygame import *
 from valores import largura, altura, x, y, velocidade, tamanho
+import time
+
 pygame.init()
 
 # definindo tamanho de tela
@@ -41,7 +43,6 @@ while rodando:
     else:
         velocidade = 2
             
-  
     #objeto_player         (R, G,  B )
     player = pygame.draw.rect(tela, (0, 250, 0), (x, y, tamanho, tamanho))
     #objeto_parede
