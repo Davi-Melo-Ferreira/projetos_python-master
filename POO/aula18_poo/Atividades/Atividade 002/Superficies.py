@@ -120,7 +120,7 @@ class CadastroSuperficie: # linha 88 - 176: classe CadastroSuperfície
 
         self.lista_instancias.append(obj) # adiciona a instância criada a uma lista
         print(f'{obj.descricao()} adicionado!')
-        
+
         
     def exibir_superficies(self):
         """Exibe as superfícies cadastradas e a quantidade de tinta necessária para cada uma."""
@@ -146,7 +146,6 @@ class CadastroSuperficie: # linha 88 - 176: classe CadastroSuperfície
             if not encontrado:
                 input('Não encontrado! Pressione qualquer tecla...')
 
-
     def calcular_total_tinta(self):
         """Calcula e exibe a quantidade total de tinta necessária para todas as superfícies cadastradas."""
         total_tinta = 0
@@ -159,7 +158,8 @@ class CadastroSuperficie: # linha 88 - 176: classe CadastroSuperfície
         Executa o fluxo principal do programa, coletando dados, exibindo informações e realizando cálculos.
         """
         self.entrar_com_dados() # aplicando método
-        while input('\nDeseja continuar? (s/any): ').strip().lower() == 's': # linha 161 - 165: loop while para entrada de dados
+        opcao = input('\nDeseja continuar? (s/n): ').strip().lower() # linha 161 - 165: loop while para entrada de dados
+        if opcao == 's' or opcao != 'n':
             self.entrar_com_dados() # aplicando método
 
         os.system('cls')
