@@ -1,4 +1,4 @@
-from codigo_feito import CadastroSuperficie
+from Superficies import CadastroSuperficie
 
 if __name__ == '__main__':
     gerenciador = CadastroSuperficie()

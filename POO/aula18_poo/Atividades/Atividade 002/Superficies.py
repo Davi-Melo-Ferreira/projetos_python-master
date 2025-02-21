@@ -1,15 +1,15 @@
-# '''
-# Obrigatório: Entrada de dados, decorator property, herança
-# Crie um sistema para calcular os gastos com tinta ao pintar diferentes tipos de superfícies.
-# A classe base Superficie deve conter os atributos nome, area (em metros quadrados) e tipo de superfície.
-# Ela deve ter um método calcular_tinta() que será sobrescrito nas subclasses.
-# A classe Parede usa 1 litro de tinta para cobrir 10 m²,
-# a classe Teto usa 1 litro para cobrir 8 m², e a classe Porta usa 1 litro para cobrir 4 m².
-# O sistema deve permitir o cadastro de múltiplas superfícies, armazená-las em uma lista,
-# e usar um laço for para calcular o gasto de tinta e exibir os dados de cada superfície.
-# Também deve ser possível filtrar as superfícies por tipo.
-# O objetivo é praticar o uso de listas, loops, condicionais e herança.
-# '''
+'''
+Obrigatório: Entrada de dados, decorator property, herança
+Crie um sistema para calcular os gastos com tinta ao pintar diferentes tipos de superfícies.
+A classe base Superficie deve conter os atributos nome, area (em metros quadrados) e tipo de superfície.
+Ela deve ter um método calcular_tinta() que será sobrescrito nas subclasses.
+A classe Parede usa 1 litro de tinta para cobrir 10 m²,
+a classe Teto usa 1 litro para cobrir 8 m², e a classe Porta usa 1 litro para cobrir 4 m².
+O sistema deve permitir o cadastro de múltiplas superfícies, armazená-las em uma lista,
+e usar um laço for para calcular o gasto de tinta e exibir os dados de cada superfície.
+Também deve ser possível filtrar as superfícies por tipo.
+O objetivo é praticar o uso de listas, loops, condicionais e herança.
+'''
 import os
 
 class Superficie:
@@ -22,12 +22,12 @@ class Superficie:
         self._area = area
         self._tipo_superficie = tipo_superficie
 
-    @property #linha 26 - 52 property para proteger atributos
-    def comodo(self):
+    @property #linha 25 - 52 property para proteger atributos
+    def comodo(self): # método acessor
         """Retorna o nome do cômodo"""
         return self._comodo
 
-    @comodo.setter
+    @comodo.setter # método modificador
     def comodo(self, comodo):
         """Define o nome do cômodo"""
         self._comodo = comodo
@@ -58,12 +58,12 @@ class Superficie:
     def descricao(self):
         """Retorna uma string formatada com a descrição da superfície"""
         return f'\nCômodo {self._comodo} - '\
-            f'Tipo: {self.tipo_superficie} - Área: {self.area}m²'
+            f'Tipo: {self._tipo_superficie} - Área: {self._area}m²'
 
 class Parede(Superficie): # linha 64 - 87: classes derivadas
     """Classe que representa uma parede de um cômodo"""
     def __init__(self, comodo, area):
-        super().__init__(comodo, area, 'Parede')
+        super().__init__(comodo, area, 'Parede') # chama o método construtor da classe base Superficie
 
     def calcular_tinta(self): #método sobrescrito
         return self._area / 10
@@ -85,7 +85,7 @@ class Porta(Superficie):
         """Calcula a quantidade de tinta necessária para pintar uma porta (1 litro cobre 4m²)"""
         return self._area / 4
 
-class CadastroSuperficie: # linha 89 - 176: classe CadastroSuperfície
+class CadastroSuperficie: # linha 88 - 176: classe CadastroSuperfície
     """
     Classe responsável por coletar as entradas do usuário, armazenar as superfícies e realizar cálculos
     """
@@ -120,7 +120,8 @@ class CadastroSuperficie: # linha 89 - 176: classe CadastroSuperfície
 
         self.lista_instancias.append(obj) # adiciona a instância criada a uma lista
         print(f'{obj.descricao()} adicionado!')
-
+        
+        
     def exibir_superficies(self):
         """Exibe as superfícies cadastradas e a quantidade de tinta necessária para cada uma."""
         for obj in self.lista_instancias:
@@ -141,7 +142,7 @@ class CadastroSuperficie: # linha 89 - 176: classe CadastroSuperfície
                 if obj.tipo_superficie == tipo_filtro:
                     print(f'{obj.descricao()} - Tinta necessária:'
                           f' {obj.calcular_tinta():.2f} litro(s)')
-                    encontrado = True
+                    encontrado = True # se o loop for feito é porque foi encontrado o tipo de filtro
             if not encontrado:
                 input('Não encontrado! Pressione qualquer tecla...')
 
@@ -157,8 +158,9 @@ class CadastroSuperficie: # linha 89 - 176: classe CadastroSuperfície
         """
         Executa o fluxo principal do programa, coletando dados, exibindo informações e realizando cálculos.
         """
+        self.entrar_com_dados() # aplicando método
         while input('\nDeseja continuar? (s/any): ').strip().lower() == 's': # linha 161 - 165: loop while para entrada de dados
-            self.entrar_com_dados()
+            self.entrar_com_dados() # aplicando método
 
         os.system('cls')
         self.exibir_superficies() #método de superfície
@@ -169,7 +171,3 @@ class CadastroSuperficie: # linha 89 - 176: classe CadastroSuperfície
             self.filtrar_por_tipo()
         input('Pressione qualquer tecla para sair...')
         os.system('cls')
-
-if __name__ == '__main__':
-    gerenciador = CadastroSuperficie()
-    gerenciador.executar()
