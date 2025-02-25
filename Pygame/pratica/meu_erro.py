@@ -13,13 +13,13 @@ tela = pygame.display.set_mode((largura, altura))
 pygame.display.set_caption('Projeto_Teste')
 
 clock = pygame.time.Clock()
-rodando = True
-while rodando:
+
+while True:
     tela.fill((0, 0, 0))
     
     for evento in pygame.event.get():
         if evento.type == pygame.QUIT: # Fecha a tela se clicar no x da janela
-            rodando = False
+            exit()
 
     teclas = pygame.key.get_pressed()
     if teclas[K_d] or teclas[K_RIGHT]:

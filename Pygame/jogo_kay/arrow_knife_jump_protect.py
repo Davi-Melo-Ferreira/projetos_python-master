@@ -1,6 +1,6 @@
 import os
 import pygame
-from player import Player
+
 altura, largura = 600, 1000
 
 tela = pygame.display.set_mode((largura, altura))
@@ -15,5 +15,7 @@ while run:
         if evento.type == pygame.QUIT:
             run = False
 
+    pygame.draw.rect(tela, (250, 250, 250), (500, 300, 30, 30))
+    pygame.display.flip()
 os.system('cls')
 pygame.quit()
