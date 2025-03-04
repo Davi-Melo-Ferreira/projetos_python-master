@@ -13,5 +13,5 @@ terminal = 'Terminando'
 for i in range(1, 4):
     terminal += '.'
     print(terminal)
-    time.sleep(0.5)
+    time.sleep(0.6)
     os.system('cls')
